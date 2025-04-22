@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rocky Yadav - Resume</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+    .group:hover .group-hover\\:block {
+      display: block;
+    }
+    .resume-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .resume-image {
+      width: 100%;
+      height: auto;
+      border: 1px solid #2d3748;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .download-btn {
+      transition: all 0.3s ease;
+    }
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-[#001133] text-white font-sans">
+
+  <!-- Header (same as before) -->
+  <header class="bg-blue-600 text-white shadow-md py-4 px-6 flex justify-between items-center fixed top-0 left-0 w-full z-50">
+    <h1 class="text-2xl font-bold">My Portfolio</h1>
+    <nav>
+      <ul class="flex space-x-6 text-lg">
+        <li><a href="myport.html" class="hover:text-gray-300">About Me</a></li>
+        <li><a href="resume.html" class="hover:text-gray-300">Resume</a></li>
+        <li><a href="projects.html" class="hover:text-gray-300">Projects</a></li>
+        <li><a href="certifications.html" class="hover:text-gray-300">Certifications</a></li>
+        <li class="relative group">
+          <a href="#" class="hover:text-gray-300">Others</a>
+          <ul class="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-white text-black shadow-md rounded-lg py-2 space-y-2 w-44 hidden group-hover:block z-50">
+            <li><a href="blogs.html" class="block px-4 py-2 hover:bg-gray-200">Blogs</a></li>
+            <li><a href="experience.html" class="block px-4 py-2 hover:bg-gray-200">Experience</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-32 pb-16 px-6">
+    <div class="resume-container relative">
+      <!-- Download Button at top right -->
+      <div class="absolute top-0 right-0 -mt-12">
+        <a href="CV_PES_CA2_2.pdf" download="Rocky_Yadav_Resume.pdf" 
+           class="download-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg inline-flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+          Download CV
+        </a>
+      </div>
+      
+      <!-- Resume Image -->
+      <div class="bg-white p-4 rounded-lg shadow-xl">
+        <img src="CV_CA2.png" alt="Rocky Yadav's Resume" class="resume-image" 
+             onerror="this.onerror=null; this.src='resume_placeholder.png'">
+      </div>
+      
+      <!-- Fallback text if image fails to load -->
+      <div id="fallback-text" class="hidden mt-8 text-center text-gray-400">
+        <p>Unable to load resume image. Please use the download button above to view my resume.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const resumeImage = document.querySelector('.resume-image');
+      const fallbackText = document.getElementById('fallback-text');
+      
+      // Check if image loaded successfully
+      if (resumeImage.complete && resumeImage.naturalHeight === 0) {
+        fallbackText.classList.remove('hidden');
+      }
+      
+      resumeImage.onerror = function() {
+        fallbackText.classList.remove('hidden');
+      };
+    });
+  </script>
+
+</body>
+</html>

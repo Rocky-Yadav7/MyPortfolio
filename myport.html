@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .animate-fadeIn {
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+    </style>
+</head>
+<body class="bg-[#001133]">
+    <header class="bg-blue-600 text-white shadow-md py-4 px-6 flex justify-between items-center fixed top-0 left-0 w-full z-50">
+        <h1 class="text-2xl font-bold">My Portfolio</h1>
+        <nav>
+            <ul class="flex space-x-6 text-lg">
+                <li><a href="myport.html" class="text-black font-semibold hover:text-gray-300">About Me</a></li>
+                <li><a href="resume.html" class="hover:text-gray-300">Resume</a></li>
+                <li><a href="projects.html" class="hover:text-gray-300">Projects</a></li>
+                <li><a href="certifications.html" class="hover:text-gray-300">Certifications</a></li>
+                <li class="relative group">
+                    <a href="#" class="hover:text-gray-300">Others</a>
+                    <ul class="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-white text-black shadow-md rounded-lg py-2 space-y-2 w-44 group-hover:block hidden z-50">
+                      <li><a href="blogs.html" class="block px-4 py-2 hover:bg-gray-200">Blogs</a></li>
+                      <li><a href = "experience.html" class="block px-4 py-2 hover:bg-gray-200">Experience</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="flex flex-col items-center mt-48 px-4 mb-12">
+        <!-- Main Content Container -->
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-6xl">
+            <!-- Left Section - Text Content -->
+            <div class="flex-1 max-w-2xl">
+                <!-- Animated Name -->
+                <div class="text-white mb-6">
+                    <!--<h2 class="text-3xl font-bold mb-4">About Me</h2> -->
+                    <div class="text-4xl font-bold mb-6">
+                        <span id="hi-text" class="opacity-0">Hii, </span>
+                        <span id="im-text" class="opacity-0">I'm </span>
+                        <span id="rocky-text" class="opacity-0">Rocky </span>
+                        <span id="yadav-text" class="opacity-0">Yadav.</span>
+                    </div>
+                    
+                    <!-- Animated Content -->
+                    <div id="about-content" class="opacity-0 text-gray-300 space-y-4">
+                        <p>
+                            I'm a dedicated engineering student pursuing B.Tech in Computer Science and Technology at Lovely Professional University. 
+                            I'm a passionate developer with experience in front-end and back-end technologies. 
+                            I enjoy solving complex problems and building innovative solutions.
+                        </p>
+                        <p>I'm proficient in:</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>JavaScript</li>
+                            <li>Python</li>
+                            <li>Data Analytics</li>
+                            <li>Machine Learning and AWS</li>
+                            <li>Devops</li>
+                        </ul>
+                        <p>
+                            I love exploring new technologies. 
+                            I'm committed to leveraging my technical prowess to engineer a brighter future. In tandem with my academic journey, 
+                            I actively participate in community service as an NSS volunteer.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Section - Image and Social Media -->
+            <div class="flex-1 flex flex-col items-center">
+                <!-- Profile Picture -->
+                <div class="w-80 h-80 rounded-full overflow-hidden border-4 border-gray-300 mb-6">
+                    <img src="CV_IMAGE.jpg" alt="Profile Picture" class="w-full h-full object-cover">
+                </div>
+
+                <!-- <div class="flex space-x-6 bg-[#001133] shadow-md p-4 rounded-lg">
+                    <a href="https://www.linkedin.com/in/rockyyadav710/" target="_blank">
+                        <img src="icons8-linkedin-48.png" alt="LinkedIn" class="w-10 h-10">
+                    </a>
+                    <a href="https://github.com/Rocky-Yadav7" target="_blank">
+                        <img src="GitHub_Icon.png" alt="GitHub" class="w-10 h-10">
+                    </a>
+                    <a href="https://leetcode.com/u/Rocky_Yadav/" target="_blank">
+                        <img src="LeetCode_Icon.png" alt="LeetCode" class="w-10 h-10">
+                    </a>
+                    <a href="https://www.hackerrank.com/profile/rockythestudent" target="_blank">
+                        <img src="HackerRank_Icon.webp" alt="HackerRank" class="w-10 h-10">
+                    </a>
+                </div> -->
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animate the greeting text
+            setTimeout(() => {
+                document.getElementById('hi-text').classList.add('animate-fadeIn');
+            }, 300);
+            
+            setTimeout(() => {
+                document.getElementById('im-text').classList.add('animate-fadeIn');
+            }, 600);
+            
+            setTimeout(() => {
+                document.getElementById('rocky-text').classList.add('animate-fadeIn');
+            }, 900);
+            
+            setTimeout(() => {
+                document.getElementById('yadav-text').classList.add('animate-fadeIn');
+            }, 1200);
+            
+            // Animate the rest of the content after name appears
+            setTimeout(() => {
+                document.getElementById('about-content').classList.add('animate-fadeIn');
+            }, 1500);
+        });
+    </script>
+
+        <!-- Footer Section -->
+        <footer class="bg-gray-900 text-white py-10 px-6">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+              <!-- Quick Links -->
+              <div>
+                <h2 class="text-xl font-semibold mb-4 border-b border-gray-700 pb-2">Quick Links</h2>
+                <ul class="space-y-2">
+                  <li><a href="myport.html" class="hover:text-blue-400">About Me</a></li>
+                  <li><a href="resume.html" class="hover:text-blue-400">Resume</a></li>
+                  <li><a href="projects.html" class="hover:text-blue-400">Projects</a></li>
+                  <li><a href="certifications.html" class="hover:text-blue-400">Certifications</a></li>
+                  <li><a href="experience.html" class="hover:text-blue-400">Experience</a></li>
+                  <li><a href="blogs.html" class="hover:text-blue-400">Blogs</a></li>
+                  <li><a href="contacts.html" class="hover:text-blue-400">Contact</a></li>
+                </ul>
+              </div>
+      
+              <!-- Contact Info -->
+              <div>
+                <h2 class="text-xl font-semibold mb-4 border-b border-gray-700 pb-2">Contact Info</h2>
+                <ul class="space-y-4">
+                  <li class="flex items-center">
+                    <span class="text-blue-400 mr-3">📞</span>
+                    <span>+91-xxxxxxx902</span>
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-blue-400 mr-3">📧</span>
+                    <span>rockythestudent@gmail.com</span>
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-blue-400 mr-3">📍</span>
+                    <span>Bhagalpur , Bihar</span>
+                  </li>
+                </ul>
+              </div>
+      
+              <!-- Optional: Social Links Again -->
+              <div>
+                <h2 class="text-xl font-semibold mb-4 border-b border-gray-700 pb-2">My Profiles</h2>
+                <div class="flex space-x-4 mt-4">
+                  <a href="https://www.linkedin.com/in/rockyyadav710/" target="_blank">
+                    <img src="icons8-linkedin-48.png" alt="LinkedIn" class="w-8 h-8">
+                  </a>
+                  <a href="https://github.com/Rocky-Yadav7" target="_blank">
+                    <img src="GitHub_Icon.png" alt="GitHub" class="w-8 h-8">
+                  </a>
+                  <a href="https://leetcode.com/u/Rocky_Yadav/" target="_blank">
+                    <img src="LeetCode_Icon.png" alt="LeetCode" class="w-8 h-8">
+                  </a>
+                  <a href="https://www.hackerrank.com/profile/rockythestudent" target="_blank">
+                    <img src="HackerRank_Icon.webp" alt="HackerRank" class="w-8 h-8">
+                  </a>
+                </div>
+              </div>
+      
+            </div>
+            <div class="text-center text-gray-500 mt-8">
+              &copy; 2025 Rocky Yadav. All rights reserved.
+            </div>
+          </footer>
+      
+</body>
+</html>

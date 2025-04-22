@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .project-card {
+            transition: all 0.3s ease;
+            height: 400px; /* Fixed height for square cards */
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        .project-image-container {
+            height: 60%; /* 60% of card for image */
+            overflow: hidden;
+        }
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .project-content {
+            height: 40%; /* 40% of card for content */
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+        }
+        .github-btn {
+            margin-top: auto; /* Pushes button to bottom */
+        }
+    </style>
+</head>
+<body class="bg-[#001133]">
+    <!-- Navigation Bar -->
+    <header class="bg-blue-600 text-white shadow-md py-4 px-6 flex justify-between items-center fixed top-0 left-0 w-full z-50">
+        <h1 class="text-2xl font-bold">My Portfolio</h1>
+        <nav>
+            <ul class="flex space-x-6 text-lg">
+                <li><a href="myport.html" class="hover:text-gray-300">About Me</a></li>
+                <li><a href="resume.html" class="hover:text-gray-300">Resume</a></li>
+                <li><a href="projects.html" class="text-black font-semibold hover:text-gray-300">Projects</a></li>
+                <li><a href="certifications.html" class="hover:text-gray-300">Certifications</a></li>
+                <li class="relative group">
+                    <a href="#" class="hover:text-gray-300">Others</a>
+                    <ul class="absolute bg-white text-black mt-2 rounded-md shadow-lg hidden group-hover:block right-0 z-50 w-40">
+                        <li><a href="blog.html" class="block px-4 py-2 hover:bg-gray-200">Blogs</a></li>
+                        <li><a href="experience.html" class="block px-4 py-2 hover:bg-gray-200">Experience</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-32 px-4 pb-12"> <!-- Changed mt-32 to pt-32 for proper spacing with fixed header -->
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-8 text-center">My Projects</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="project-image-container bg-gray-100">
+                        <img src="Spam_Ham.png" alt="Spam/Ham Classifier" class="project-image" 
+                             onerror="this.src='default-project.png'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Spam/Ham Classifier</h3>
+                        <p class="text-gray-600 mb-4">Machine learning model to classify emails as spam or legitimate.</p>
+                        <a href="https://github.com/Rocky-Yadav7/Spam-Ham-Classification" 
+                           class="github-btn inline-block bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg transition-colors">
+                           View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="project-image-container bg-gray-100">
+                        <img src="Tic_Tac_Toe.png" alt="Tic Tac Toe Game" class="project-image"
+                             onerror="this.src='default-project.png'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Tic Tac Toe</h3>
+                        <p class="text-gray-600 mb-4">Interactive game with AI opponent using minimax algorithm.</p>
+                        <a href="https://github.com/Rocky-Yadav7/Tic-Tac-Toe" 
+                           class="github-btn inline-block bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg transition-colors">
+                           View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="project-image-container bg-gray-100">
+                        <img src="Sentiment_Image.png" alt="Sentiment Analysis" class="project-image"
+                             onerror="this.src='default-project.png'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Sentiment Analysis</h3>
+                        <p class="text-gray-600 mb-4">NLP model to analyze sentiment in text reviews.</p>
+                        <a href="https://github.com/Rocky-Yadav7/Sentiment-Analysis" 
+                           class="github-btn inline-block bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg transition-colors">
+                           View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

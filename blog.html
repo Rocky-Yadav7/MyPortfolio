@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects & Certifications</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .card {
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .image-container {
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .fallback-icon {
+            font-size: 3rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body class="bg-[#001133] min-h-screen">
+    <!-- Navigation Bar -->
+    <header class="bg-blue-600 text-white shadow-md py-4 px-6 flex justify-between items-center fixed top-0 left-0 w-full z-50">
+        <h1 class="text-2xl font-bold">My Portfolio</h1>
+        <nav>
+            <ul class="flex space-x-6 text-lg">
+                <li><a href="myport.html" class="hover:text-gray-300">About Me</a></li>
+                <li><a href="resume.html" class="hover:text-gray-300">Resume</a></li>
+                <li><a href="projects.html" class="hover:text-gray-300">Projects</a></li>
+                <li><a href="certifications.html" class="text-black font-semibold hover:text-gray-300">Certifications</a></li>
+                <li class="relative group">
+                    <a href="#" class="hover:text-gray-300">Others</a>
+                    <ul class="absolute bg-white text-black mt-2 rounded-md shadow-lg hidden group-hover:block right-0 z-50 w-40">
+                        <li><a href="blog.html" class="block px-4 py-2 hover:bg-gray-200">Blogs</a></li>
+                        <li><a href="experience.html" class="block px-4 py-2 hover:bg-gray-200">Experience</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-32 pb-12 px-4 md:px-8">
+        <div class="max-w-6xl mx-auto space-y-8">
+            <!-- Projects Section -->
+            <section>
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">My Projects</h2>
+                <div class="grid gap-8">
+                    <!-- Project 1 -->
+                    <div class="card bg-white rounded-lg overflow-hidden flex flex-col md:flex-row">
+                        <div class="image-container md:w-2/5 p-6">
+                            <a href="https://www.blogger.com/blog/posts/3513416450385955224" target="_blank" 
+                               class="block h-full flex items-center justify-center">
+                               <img src="ganga_blog_image.jpg" alt="Ganga Blog" 
+                               class="max-h-64 w-auto object-contain rounded-lg border border-gray-300"
+                               onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-icon\'>📝</div>'">
+                          
+                            </a>
+                        </div>
+                        <div class="md:w-3/5 p-6 md:p-8">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Ganga: Lifeline of India</h3>
+                            <p class="text-gray-600 mb-4">Blog Project</p>
+                            <div class="text-gray-700 space-y-4 mb-6">
+                                <p>This comprehensive blog explores the cultural, ecological, and spiritual significance of the River Ganga in India.</p>
+                                <p>The project documents the river's journey from the Himalayas to the Bay of Bengal, highlighting environmental challenges and conservation efforts.</p>
+                            </div>
+                            <a href="https://www.blogger.com/blog/posts/3513416450385955224" target="_blank"
+                               class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Add more projects here following the same structure -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Better error handling for images
+        document.addEventListener('DOMContentLoaded', function() {
+            const imageContainers = document.querySelectorAll('.image-container');
+            
+            imageContainers.forEach(container => {
+                const img = container.querySelector('img');
+                if (img) {
+                    img.onerror = function() {
+                        const fallback = document.createElement('div');
+                        fallback.className = 'fallback-icon';
+                        
+                        // Determine appropriate fallback icon based on context
+                        if (img.alt.includes('Certificate') || container.closest('section').querySelector('h2').textContent.includes('Certifications')) {
+                            fallback.textContent = '🏆'; // Trophy for certificates
+                        } else {
+                            fallback.textContent = '📝'; // Pencil for projects
+                        }
+                        
+                        // Replace the image with fallback
+                        container.innerHTML = '';
+                        container.appendChild(fallback);
+                    };
+                }
+            });
+        });
+    </script>
+</body>
+</html>

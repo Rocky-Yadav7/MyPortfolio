@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .certificate-image {
+            transition: transform 0.3s ease;
+        }
+        .certificate-image:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-[#001133]">
+    <header class="bg-blue-600 text-white shadow-md py-4 px-6 flex justify-between items-center fixed top-0 left-0 w-full z-50">
+        <h1 class="text-2xl font-bold">My Portfolio</h1>
+        <nav>
+            <ul class="flex space-x-6 text-lg">
+                <li><a href="myport.html" class="hover:text-gray-200">About Me</a></li>
+                <li><a href="resume.html" class="hover:text-gray-200">Resume</a></li>
+                <li><a href="projects.html" class="hover:text-gray-200">Projects</a></li>
+                <li><a href="certifications.html" class="hover:text-gray-200">Certifications</a></li>
+
+                <li class="relative group">
+                    <a href="#" class="hover:text-gray-300">Others</a>
+                    <ul class="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-white text-black shadow-md rounded-lg py-2 space-y-2 w-44 group-hover:block hidden z-50">
+                        <li><a href="contacts.html" class="block px-4 py-2 hover:bg-gray-200">Contacts</a></li>
+                        <li><a href="blogs.html" class="block px-4 py-2 hover:bg-gray-200">Blogs</a></li>
+                        <li><a href="experience.html" class="text-orange-500 block px-4 py-2 hover:bg-gray-200">Experience</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="flex flex-col items-center justify-center mt-32 px-4 mb-12">
+        <!-- Increased width to max-w-5xl (wider than before) -->
+        <div class="max-w-5xl w-full bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row">
+            <!-- Certificate Image (Left Side) - Now taking up 2/5 of the space -->
+            <div class="md:w-2/5 p-4 flex items-center justify-center bg-gray-100">
+                <a href="Fifth_Force_Certificate.pdf" target="_blank" class="certificate-image">
+                    <!-- Made image larger to fill more space -->
+                    <img src="Fifth_Force.png" alt="Certificate" class="max-h-96 w-auto object-contain rounded-lg border border-gray-300">
+                </a>
+            </div>
+            
+            <!-- Content (Right Side) - Now taking up 3/5 of the space -->
+            <div class="md:w-3/5 p-8">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800">Data Analytics Traning</h2>
+                <!-- <h3 class="text-2xl font-semibold mb-3 text-gray-700">Data Analytics Trainee</h3> -->
+                
+                <div class="mb-6">
+                    <a href="Fifth_Force_Certificate.pdf" target="_blank" class="inline-block bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700 transition-colors text-lg">
+                        View Certificate PDF
+                    </a>
+                </div>
+                
+                <div class="text-gray-700 space-y-5 text-lg">
+                    <p>
+                        🎓 <strong class="text-xl">Excited to Announce:</strong> Completion of 6-Week Summer Training/Internship! 🎓
+                    </p>
+                    <p>
+                        I am thrilled to share that I have successfully completed my 6-week summer training/internship at <strong>Fifth Force</strong>, focusing on <strong>Data Analysis with Python</strong>. This program was endorsed by <strong>UTOPIA DESK</strong>, adding an extra layer of prestige and recognition to the experience.
+                    </p>
+                    <p>
+                        Throughout this journey, I have gained valuable insights and hands-on skills in data manipulation, visualization, and statistical analysis using Python. I had the opportunity to work on real-world datasets, applying techniques to extract meaningful insights and drive data-driven decisions.
+                    </p>
+                    <p>
+                        I want to extend my heartfelt gratitude to the team at Fifth Force and UTOPIA DESK for their guidance and support. This experience has been incredibly enriching, and I am eager to apply what I have learned to future projects.
+                    </p>
+                    <p class="font-medium">
+                        Thank you to everyone who made this experience possible!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
